@@ -23,7 +23,7 @@ exec_always --no-startup-id mpd
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Запустить picom анимации и прозрачности
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
 
 exec Telegram
 
@@ -40,6 +40,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Дисплей
 exec_always --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
+
+# Обои
+exec_always --no-startup-id ~/.fehbg
 
 # Настройки мыши
 exec_always --no-startup-id xinput set-prop 14 'libinput Accel Speed' -1
@@ -87,6 +90,7 @@ bindsym $mod+control+e exec nemo
 
 # Скриншот
 # bindsym Print exec spectacle
+bindsym Print exec maim ~/Pictures/$(date +%s).png
 
 # Звук
 bindsym $mod+control+v exec pavucontrol 
