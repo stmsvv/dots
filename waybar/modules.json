@@ -1,0 +1,281 @@
+// Модули
+{
+	"mpd": {
+		"format": "{artist} - {title} {stateIcon}",
+		"format-disconnected": "Disconnected",
+		"format-stopped": "",
+		"interval": 2,
+		"on-click": "mpc toggle",
+		"on-click-right": "mpc next",
+		"on-scroll-up": "mpc volume +5",
+		"on-scroll-down": "mpc volume -5",
+		"align": 0,
+		"title-len": 20,
+		"consume-icons": {
+			"on": " " // Icon shows only when "consume" is on
+		},
+		"random-icons": {
+			"off": "<span color=\"#cc241d\"></span> ", // Icon grayed out when "random" is off
+			"on": " "
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": "1 "
+		},
+		"state-icons": {
+			"paused": "",
+			"playing": ""
+		},
+		"tooltip-format": "{artist} - {album} - {title} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
+		"tooltip-format-disconnected": "MPD disconnected"
+	},
+	"tray": {
+		"icon-size": 14,
+		"spacing": 10,
+		"icons": {
+			"steam": "/home/arthur/.icons/Gruvbox-Plus-Dark/apps/16/steam.svg"
+			// "TelegramDesktop": "/home/arthur/.icons/Gruvbox-Plus-Dark/apps/16/telegram.svg"
+		}
+	},
+	"clock": {
+		// "format": "{:%u:%d:%m:%H:%M}",
+		"format": "{:%A, %d %B, %H:%M}",
+		// "timezone": "Russia/Moscow",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#98971a'><b>{}</b></span>",
+				"days": "<span color='#ebdbb2'><b>{}</b></span>",
+				"weeks": "<span color='#458588'><b>W{}</b></span>",
+				"weekdays": "<span color='#83a598'><b>{}</b></span>",
+				"today": "<span color='#d79921'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"cpu": {
+		"format": "{usage}% ",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "{}% "
+	},
+	"temperature": {
+		"thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		"format-critical": "{temperatureC}°C {icon}",
+		"format": "{temperatureC}° {icon}",
+		"format-icons": [
+			"",
+			"",
+			""
+		]
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "{essid} ",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"custom/separator": {
+		"format": "󰧞",
+		"tooltip": false,
+		"interval": 0
+	},
+	"pulseaudio": {
+		"scroll-step": 2, // %, can be a float
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-bluetooth-muted": "󰆪 MUTE ",
+		"format-muted": "󰆪 MUTE",
+		"format-source": "󰍬",
+		// "format-source": "{volume}% ",
+		"format-source-muted": "󰍭",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click-right": "pavucontrol",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+	},
+	"custom/power_menu": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "/home/arthur/.config/rofi/scripts/power_menu.sh", // Menu file in resources folder
+	},
+	"custom/rofi": {
+		"font-size": 50,
+		"format": "󰣇",
+		"tooltip": true,
+		"tooltip-format": "Лаунчер",
+		"on-click": "rofi -show drun"
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		// "format": "{name}",
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十",
+			// "active": "󰮯",
+			"default": "󰊠",
+			"empty": ""
+		},
+		"window-rewrite-default": "",
+		"persistent-workspaces": {
+			"*": 3 // 5 workspaces by default on every monitor
+		},
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
+	},
+	"hyprland/window": {
+		"max-length": 25,
+		"format": "{}",
+		"rewrite": {},
+		"separate-outputs": true
+	},
+	"custom/updates": {
+		"format": "{} {icon}",
+		"return-type": "json",
+		"format-icons": {
+			"has-updates": "",
+			"updated": ""
+		},
+		"exec-if": "which waybar-module-pacman-updates",
+		"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+	},
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "Eng",
+		"format-ru": "Rus",
+		"keyboard-name": "juchen-usb-keyboard",
+		"on-click": "hyprctl switchxkblayout 'juchen-usb-keyboard' next"
+	},
+	"custom/hyprsunset": {
+		"format": "{}% 󰖨",
+        "interval": 5,
+		"on-click": "hyprctl hyprsunset temperature 5000",
+		"on-click-right": "hyprctl hyprsunset temperature 6000",
+		"on-scroll-up": "hyprctl hyprsunset gamma +2",
+		"on-scroll-down": "hyprctl hyprsunset gamma -2",
+		"tooltip": true,
+		"tooltip-format": "Управление экраном",
+        "exec": "/home/arthur/.config/waybar/modules/hyprsunset_gamma.sh"
+	},
+	"group/hardware": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"transition-left-to-right": false
+		},
+		"modules": [
+			"network",
+			"custom/updates",
+			"cpu",
+			"memory",
+			"temperature"
+		]
+	},
+	"keyboard-state": {
+		"numlock": false,
+		"capslock": true,
+		"format": {
+			"numlock": "N {icon}",
+			"capslock": "{icon}"
+		},
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+	"bluetooth": {
+		"format": "",
+		"format-connected": "{device_alias} ",
+		"format-off": "",
+		"format-connected-battery": "{device_alias} {device_battery_percentage}% ",
+		// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+		"on-click": "bluetoothctl power on",
+		"on-click-right": "bluetoothctl power off"
+	},
+	"custom/weather": {
+        "format": "{}",
+        "interval": 600,
+        "tooltip": true,
+        "tooltip-format": "Погода в Казани",
+		"exec": "/home/arthur/.config/waybar/modules/weather.sh"
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		// "format": "{} {icon}",
+		"format-icons": {
+			"notification": "󰂚<span foreground='red'><sup></sup></span>",
+			"none": "󰂜",
+			"dnd-notification": "󰂛<span foreground='red'><sup></sup></span>",
+			"dnd-none": "󰪑",
+			"inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "󰂜",
+			"dnd-inhibited-notification": "󰂛<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": "󰪑"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"mpris": {
+		"format": "{player_icon} {dynamic}",
+		"format-paused": "{status_icon} <i>{dynamic}</i>",
+		"player-icons": {
+			"default": "▶",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "⏸"
+		},
+		// "ignored-players": ["firefox"]
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"tooltip": true,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"active-first": true
+	},
+}

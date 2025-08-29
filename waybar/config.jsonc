@@ -1,0 +1,64 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top", // Waybar at top layer
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	"margin-top": 8,
+	"margin-left": 14,
+	"margin-right": 14,
+	// "height": 15, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"reload_style_on_change": true,
+	"exclusive": true,
+	"spacing": 4, // Gaps between modules (4px)
+	// Choose the order of the modules
+	// Добавить модули
+	"include": [
+		"~/.config/waybar/modules.json"
+	],
+	// Модули слева
+	"modules-left": [
+		// "custom/rofi",
+		// "custom/separator",
+        "hyprland/workspaces",
+		"custom/separator",
+		"tray"
+		// "custom/separator",
+		// "hyprland/language",
+		// "keyboard-state"
+		// "hyprland/window"
+	],
+	// Модули по центру
+	"modules-center": [
+		// "clock",
+		// "hyprland/workspaces",
+		// "custom/separator",
+		"custom/weather",
+		"clock",
+		"custom/separator",
+		"hyprland/language",
+		"keyboard-state"
+		// "custom/weather",
+		// "hyprland/language",
+		// "custom/separator",
+		// "keyboard-state"
+		// "wlr/taskbar"
+		// "hyprland/window"
+	],
+	// Модули справа
+	"modules-right": [
+		"bluetooth",
+		// "custom/separator",
+		"pulseaudio",
+		"custom/separator",
+		// "custom/updates",
+		// "clock",
+		// "custom/separator",
+		// "hyprland/language",
+		// "keyboard-state",
+		"custom/hyprsunset",
+		// "custom/separator",
+		"custom/notification",
+		// "custom/separator",
+		"custom/power_menu"
+	]
+}

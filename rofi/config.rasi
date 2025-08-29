@@ -1,0 +1,13 @@
+configuration {
+  	modes: "window,drun,run";
+    font: "JetBrains Mono Regular 12";
+    show-icons: true;
+  	display-window: "Окна:";
+  	display-run: "Всё:";
+/* 	display-ssh: ;*/
+  	display-drun: "Приложения:";
+    fixed-num-lines: false;
+}
+
+@theme "~/.config/rofi/themes/mytheme.rasi"
+// @theme "~/.cache/wal/colors-rofi-dark.rasi"
