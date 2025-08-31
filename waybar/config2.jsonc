@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    "output": "DP-2",
+    "output": "HDMI-A-1",
 	"layer": "top", // Waybar at top layer
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
 	"margin-top": 8,
@@ -20,9 +20,9 @@
 	"modules-left": [
 		// "custom/rofi",
 		// "custom/separator",
-        "hyprland/workspaces",
-		"custom/separator",
-		"tray"
+        "hyprland/workspaces"
+		// "custom/separator",
+		// "tray"
 		// "custom/separator",
 		// "hyprland/language",
 		// "keyboard-state"
@@ -47,7 +47,7 @@
 	],
 	// Модули справа
 	"modules-right": [
-		"bluetooth",
+		// "bluetooth",
 		// "custom/separator",
 		"pulseaudio",
 		"custom/separator",
@@ -56,9 +56,9 @@
 		// "custom/separator",
 		// "hyprland/language",
 		// "keyboard-state",
-		"custom/hyprsunset",
+		// "custom/hyprsunset",
 		// "custom/separator",
-		"custom/notification",
+		// "custom/notification",
 		// "custom/separator",
 		"custom/power_menu"
 	]
