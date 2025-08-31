@@ -49,8 +49,8 @@
 	"modules-right": [
 		// "bluetooth",
 		// "custom/separator",
-		"pulseaudio",
-		"custom/separator",
+		// "pulseaudio",
+		// "custom/separator",
 		// "custom/updates",
 		// "clock",
 		// "custom/separator",
